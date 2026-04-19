@@ -1,0 +1,14 @@
+{
+  "name": "hola-devops",
+  "version": "1.0.0",
+  "description": "Aplicación Hola Mundo para CI/CD",
+  "main": "app.js",
+  "scripts": {
+    "start": "node app.js",
+    "test": "jest"
+  },
+  "dependencies": {},
+  "devDependencies": {
+    "jest": "^29.0.0"
+  }
+}
