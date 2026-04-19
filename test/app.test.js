@@ -1,7 +1,8 @@
 const http = require('http');
-const server = require('../app');
+const server = require('../app'); // importa el servidor desde app.js
 
 describe('Servidor Hola Mundo', () => {
+  // Cierra el servidor después de todas las pruebas
   afterAll(() => {
     server.close();
   });
@@ -11,7 +12,7 @@ describe('Servidor Hola Mundo', () => {
       let data = '';
       res.on('data', chunk => data += chunk);
       res.on('end', () => {
-        expect(data).toContain('Hola Mundo');
+        expect(data).toContain('Hola Mundo'); // comprueba que la respuesta contiene "Hola Mundo"
         done();
       });
     });

@@ -1,14 +1,15 @@
-const http = require('http');
+const express = require('express');
+const app = express();
 
-const PORT = process.env.PORT || 3000;
-
-const server = http.createServer((req, res) => {
-  res.statusCode = 200;
-  res.end('Hola Mundo DevOps CI/CD 🚀');
+// Ruta principal
+app.get('/', (req, res) => {
+  res.send('Hola Mundo');
 });
 
-server.listen(PORT, () => {
-  console.log(`Servidor escuchando en el puerto ${PORT}`);
+// Arranca el servidor
+const server = app.listen(3000, () => {
+  console.log('Servidor corriendo en puerto 3000');
 });
 
+// Exporta el servidor para que las pruebas lo puedan usar
 module.exports = server;
